@@ -53,6 +53,11 @@ ZEND_BEGIN_MODULE_GLOBALS(immortal)
 	char *global_string;
 ZEND_END_MODULE_GLOBALS(immortal)
 */
+ZEND_BEGIN_MODULE_GLOBALS(immortal)
+	long  throw_exception_at_exit;
+ZEND_END_MODULE_GLOBALS(immortal)
+
+int immortal_exit_handler(ZEND_OPCODE_HANDLER_ARGS);
 
 /* In every utility function you add that needs to use variables 
    in php_immortal_globals, call TSRMLS_FETCH(); after declaring other 

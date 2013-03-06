@@ -13,9 +13,8 @@ dnl [  --with-immortal             Include immortal support])
 
 dnl Otherwise use enable:
 
-dnl PHP_ARG_ENABLE(immortal, whether to enable immortal support,
-dnl Make sure that the comment is aligned:
-dnl [  --enable-immortal           Enable immortal support])
+PHP_ARG_ENABLE(immortal, whether to enable immortal support,
+[  --enable-immortal           Enable immortal support])
 
 if test "$PHP_IMMORTAL" != "no"; then
   dnl Write more examples of tests here...
@@ -59,5 +58,5 @@ if test "$PHP_IMMORTAL" != "no"; then
   dnl
   dnl PHP_SUBST(IMMORTAL_SHARED_LIBADD)
 
-  PHP_NEW_EXTENSION(immortal, immortal.c, $ext_shared)
+  PHP_NEW_EXTENSION(immortal, immortal.c, $ext_shared,,,,yes)
 fi
